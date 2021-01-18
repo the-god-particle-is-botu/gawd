@@ -1,19 +1,12 @@
 #include <stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 int main() 
 { 
     int i,k;
     printf("enter the no of elements required\n");
     scanf("%d",&k);
-
-    float xavg=0,sxs=0,djs=0;
-    float yavg=0;
-    float* X = (float*)malloc(k*sizeof(float));
-    float* Y = (float*)malloc(k*sizeof(float));
-    float* x = (float*)malloc(k*sizeof(float));
-    float* y = (float*)malloc(k*sizeof(float));
-    float* sx =(float*)malloc(k*sizeof(float));
-    float* dj =(float*)malloc(k*sizeof(float));
+    float xavg=0,sxs=0,djs=0,yavg=0;
+    float X[k], Y[k], x[k], y[k], dj[k], sx[k];
     printf("enter the values of x \n");
     for(i=0;i<k;i++)
     {
