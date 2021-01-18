@@ -1,68 +1,65 @@
 #include <stdio.h>
-
-int main() { 
-  
-
+#include<stdlib.h>
+int main() 
+{ 
     int i,k;
-    float x[k],xavg=0,X[k],sx[i],sxs=0,dj[i],djs=0;
-    float y[k],yavg=0,Y[k];
     printf("enter the no of elements required\n");
     scanf("%d",&k);
+
+    float xavg=0,sxs=0,djs=0;
+    float yavg=0;
+    float* X = (float*)malloc(k*sizeof(float));
+    float* Y = (float*)malloc(k*sizeof(float));
+    float* x = (float*)malloc(k*sizeof(float));
+    float* y = (float*)malloc(k*sizeof(float));
+    float* sx =(float*)malloc(k*sizeof(float));
+    float* dj =(float*)malloc(k*sizeof(float));
     printf("enter the values of x \n");
     for(i=0;i<k;i++)
     {
        scanf("%f",&x[i]);
-        }
-    
-    for(i=0;i<k;i++)
-   { xavg=xavg+x[i];}
-     xavg=xavg/k;
-   
-    printf(" the average of x is %f\n",xavg);
-   printf("the values of (x - xavg) are \n");
-    for(i=0;i<k;i++)
-    
-       { X[i]=x[i]-xavg;
-        printf("%f\n",X[i]);}
-        printf("the values of (x - xavg)^2 are\n");
-        for(i=0;i<k;i++)
-    {
-        sx[i]=X[i]*X[i];
-        printf("%f\n",sx[i]);
+       xavg+=x[i];
     }
+    xavg=xavg/k;
+    printf("the average of x is %f\n\n",xavg);
+    printf("the values of (x - xavg) are \n");
     for(i=0;i<k;i++)
-       { sxs=sxs+sx[i];}
-    printf(" the summation of all (x - xavg)^2 is %f\n",sxs);
-    
-    
-    {
-    printf("enter the values of y \n");
-    for(i=0;i<k;i++)
-    {
-       scanf("%f",&y[i]);
+    { 
+        X[i]=x[i]-xavg;
+        printf("%f\n",X[i]);}
+        printf("\nthe values of (x - xavg)^2 are\n");
+        for(i=0;i<k;i++)
+        {
+          sx[i]=X[i]*X[i];
+          sxs+=sx[i];
+          printf("%f\n",sx[i]);
         }
-    
+    printf("\nthe summation of all (x - xavg)^2 is %f\n",sxs);
     for(i=0;i<k;i++)
-   { yavg=yavg+y[i];}
-     yavg=yavg/k;
-   
-    printf("the average value of y is %f\n",yavg);
-   printf("the values of (y - yavg) are\n");
+    {
+        printf("enter the values of y \n");
+        for(i=0;i<k;i++)
+        {
+           scanf("%f",&y[i]);
+           yavg+=y[i];
+        }
+        yavg=yavg/k;
+        printf("the average value of y is %f\n",yavg);
+        printf("the values of (y - yavg) are\n");
+        for(i=0;i<k;i++)
+        { 
+            Y[i]=y[i]-yavg;
+            printf("%f\n",Y[i]);
+        } 
+    
+    }
+    printf("\nthe values of (x - xavg)*(y - yavg) are\n");
     for(i=0;i<k;i++)
-    
-       { Y[i]=y[i]-yavg;
-        printf("%f\n",Y[i]);}  
-    
-    
-    
-}printf("the values of (x - xavg)*(y - yavg) are\n");
-for(i=0;i<k;i++)
-{dj[i]= X[i] * Y[i];
-printf("%f\n",dj[i]);}
-for(i=0;i<k;i++)
-{djs=djs + dj[i];}
-printf(" the summation of all (x - xavg)*(y - yavg) is %f\n",djs);
-
-
-return 0;
+    {
+          dj[i]= X[i] * Y[i];
+          djs=djs + dj[i];
+          printf("%f\n",dj[i]);
+    }
+    printf("\nthe summation of all (x - xavg)*(y - yavg) is %f\n",djs);
+    return 0;
 }
