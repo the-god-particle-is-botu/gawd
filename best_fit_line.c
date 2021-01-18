@@ -26,17 +26,17 @@ int main()
     for(i=0;i<k;i++)
     { 
         X[i]=x[i]-xavg;
-        printf("%f\n",X[i]);}
-        printf("\nthe values of (x - xavg)^2 are\n");
-        for(i=0;i<k;i++)
-        {
-          sx[i]=X[i]*X[i];
-          sxs+=sx[i];
-          printf("%f\n",sx[i]);
-        }
-    printf("\nthe summation of all (x - xavg)^2 is %f\n",sxs);
+        sx[i]=X[i]*X[i];
+        sxs+=sx[i];
+        printf("\t%f\n",X[i]);
+    }
+    printf("\nthe values of (x - xavg)^2 are\n");
     for(i=0;i<k;i++)
     {
+      printf("\t%f\n",sx[i]);
+    }
+    printf("\nthe summation of all (x - xavg)^2 is %f\n",sxs);
+    printf("\n------------------------------------------------\n");
         printf("enter the values of y \n");
         for(i=0;i<k;i++)
         {
@@ -49,16 +49,15 @@ int main()
         for(i=0;i<k;i++)
         { 
             Y[i]=y[i]-yavg;
-            printf("%f\n",Y[i]);
+            printf("\t%f\n",Y[i]);
         } 
-    
-    }
+    printf("\n------------------------------------------------\n");
     printf("\nthe values of (x - xavg)*(y - yavg) are\n");
     for(i=0;i<k;i++)
     {
           dj[i]= X[i] * Y[i];
           djs=djs + dj[i];
-          printf("%f\n",dj[i]);
+          printf("\t%f\n",dj[i]);
     }
     printf("\nthe summation of all (x - xavg)*(y - yavg) is %f\n",djs);
     return 0;
