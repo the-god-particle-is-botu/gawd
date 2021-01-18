@@ -1,5 +1,5 @@
 
-<h1>calculation of best fit line<h1>
+<h1>calculation of best fit line</h1>
 <br>
 <p>Hi guys,
 I am Rohith from mechanical 2020😁
