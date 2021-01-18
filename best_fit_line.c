@@ -53,5 +53,6 @@ int main()
           printf("\t%f\n",dj[i]);
     }
     printf("\nthe summation of all (x - xavg)*(y - yavg) is %f\n",djs);
+    printf("\nThe slope is %f\n", (djs/sxs));
     return 0;
 }
